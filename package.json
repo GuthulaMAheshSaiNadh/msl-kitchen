@@ -5,5 +5,8 @@
   "description": "MSL Kitchen ordering platform",
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4"
+  },
+  "engines": {
+    "node": "20.x"
   }
 }
