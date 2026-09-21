@@ -5,6 +5,7 @@ Add these variables in **Vercel → Project Settings → Environment Variables**
 ```text
 SUPABASE_URL=https://<project-ref>.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=<server-only-service-role-key>
+# Or use SUPABASE_SECRET_KEY instead of SUPABASE_SERVICE_ROLE_KEY
 ```
 
 Never expose `SUPABASE_SERVICE_ROLE_KEY` in browser code. The serverless routes under `/api` use it only on the server.
