@@ -1,7 +1,8 @@
-const supabase = require('../lib/supabase');
+const { getSupabase } = require('../lib/supabase');
 
 module.exports = async function handler(req, res) {
   try {
+    const supabase = getSupabase();
     const { data, error } = await supabase
       .from('categories')
       .select('id,name,slug,image_url,display_order')

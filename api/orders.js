@@ -1,5 +1,5 @@
 const crypto = require('crypto');
-const supabase = require('../lib/supabase');
+const { getSupabase } = require('../lib/supabase');
 
 function deliveryFee(distance, slabs) {
   const slab = slabs.find((item) => distance >= Number(item.min_km) && (item.max_km == null || distance < Number(item.max_km)));
@@ -9,6 +9,7 @@ function deliveryFee(distance, slabs) {
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'POST only' });
   try {
+    const supabase = getSupabase();
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body || {};
     if (!Array.isArray(body.items) || body.items.length === 0) return res.status(400).json({ error: 'Cart is empty' });
     if (!body.address?.house_flat || !body.address?.street_area) return res.status(400).json({ error: 'Delivery address is required' });
