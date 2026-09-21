@@ -39,3 +39,8 @@ This visual build is intentionally dependency-free so it can be previewed immedi
 - Redis rate limiting and cache
 
 The current free-delivery radius is read from `state.delivery` and edited through the admin UI; it is not hardcoded into the checkout markup.
+
+
+## Backend
+
+The repository now includes Vercel serverless API routes under `/api` for health, menu, settings, and order creation. They connect to the MSL Kitchen Supabase project using server-only environment variables.

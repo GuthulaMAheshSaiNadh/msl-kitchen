@@ -1,0 +1,9 @@
+{
+  "name": "msl-kitchen",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MSL Kitchen ordering platform",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4"
+  }
+}
